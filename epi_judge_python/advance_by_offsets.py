@@ -1,9 +1,13 @@
 from test_framework import generic_test
 
 
-def can_reach_end(A):
-    # TODO - you fill in here.
-    return True
+def can_reach_end(nums):
+    min_index = len(nums) - 1
+    for i in reversed(range(len(nums))):
+        if i + nums[i] >= min_index:
+            min_index = i
+
+    return min_index == 0
 
 
 if __name__ == '__main__':
