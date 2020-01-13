@@ -5,9 +5,22 @@ from test_framework.test_utils import enable_executor_hook
 
 
 # Returns the number of valid entries after deletion.
-def delete_duplicates(A):
-    # TODO - you fill in here.
-    return 0
+def delete_duplicates(nums):
+    """
+        j
+    12345455
+           i
+    """
+
+    i = j = 0
+    while i < len(nums):
+        if nums[i] != nums[j]:
+            j += 1
+            nums[j] = nums[i]
+
+        i += 1
+
+    return j + 1
 
 
 @enable_executor_hook
